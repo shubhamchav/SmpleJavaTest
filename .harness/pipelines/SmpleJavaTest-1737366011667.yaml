@@ -67,12 +67,14 @@ pipeline:
                     advanced:
                       log:
                         level: info
+                    settings:
+                      organization: shubhamchav
                     auth:
                       access_token: squ_cc23e1f90a6bd8db177bdf4cf9c77514c8c7eaae
-                      domain: http://sonar.cybage.com/
+                      domain: https://sonarcloud.io/
                       ssl: true
                     tool:
-                      project_key: Migration_8.9_Java
+                      project_key: shubhamchav_SmpleJavaTest
           platform:
             os: Linux
             arch: Amd64
