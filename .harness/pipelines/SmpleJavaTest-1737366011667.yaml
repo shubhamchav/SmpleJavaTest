@@ -27,6 +27,21 @@ pipeline:
                     command: mvn build
                   timeout: ""
                   type: Run
+              - step:
+                  type: Test
+                  name: Test
+                  identifier: Test
+                  spec:
+                    shell: Sh
+                    command: mvn test
+                    intelligenceMode: true
+              - step:
+                  type: Run
+                  name: Package
+                  identifier: Package
+                  spec:
+                    shell: Sh
+                    command: mvn package
           platform:
             os: Linux
             arch: Amd64
