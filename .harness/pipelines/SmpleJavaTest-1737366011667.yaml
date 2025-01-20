@@ -54,6 +54,25 @@ pipeline:
                     advanced:
                       log:
                         level: info
+              - step:
+                  type: Sonarqube
+                  name: Sonarqube
+                  identifier: Sonarqube
+                  spec:
+                    mode: orchestration
+                    config: default
+                    target:
+                      type: repository
+                      detection: auto
+                    advanced:
+                      log:
+                        level: info
+                    auth:
+                      access_token: squ_cc23e1f90a6bd8db177bdf4cf9c77514c8c7eaae
+                      domain: http://sonar.cybage.com/
+                      ssl: true
+                    tool:
+                      project_key: Migration_8.9_Java
           platform:
             os: Linux
             arch: Amd64
