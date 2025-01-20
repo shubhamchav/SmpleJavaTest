@@ -67,12 +67,10 @@ pipeline:
                     advanced:
                       log:
                         level: info
-                    settings:
-                      organization: shubhamchav
                     auth:
-                      access_token: squ_cc23e1f90a6bd8db177bdf4cf9c77514c8c7eaae
+                      access_token: 8dae8147944942aada3362d449f89504b89e0f6b
                       domain: https://sonarcloud.io/
-                      ssl: true
+                      ssl: false
                     tool:
                       project_key: shubhamchav_SmpleJavaTest
           platform:
