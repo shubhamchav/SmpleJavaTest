@@ -20,14 +20,6 @@ pipeline:
           execution:
             steps:
               - step:
-                  identifier: echo
-                  name: Build
-                  spec:
-                    shell: Sh
-                    command: mvn comiple
-                  timeout: ""
-                  type: Run
-              - step:
                   type: Test
                   name: Test
                   identifier: Test
