@@ -68,7 +68,7 @@ pipeline:
                       log:
                         level: info
                     auth:
-                      access_token: 8dae8147944942aada3362d449f89504b89e0f6b
+                      access_token: 5ca7a9d7c023ff2d022e32d71f7b6cb1e97c8f1a
                       domain: https://sonarcloud.io/
                       ssl: false
                     tool:
