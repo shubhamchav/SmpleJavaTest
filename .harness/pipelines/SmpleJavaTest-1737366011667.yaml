@@ -20,6 +20,13 @@ pipeline:
           execution:
             steps:
               - step:
+                  type: Run
+                  name: Build
+                  identifier: Build
+                  spec:
+                    shell: Sh
+                    command: mvn clean install
+              - step:
                   type: Test
                   name: Test
                   identifier: Test
