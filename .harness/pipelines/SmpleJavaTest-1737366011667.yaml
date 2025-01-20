@@ -24,7 +24,7 @@ pipeline:
                   name: Build
                   spec:
                     shell: Sh
-                    command: mvn build
+                    command: mvn comiple
                   timeout: ""
                   type: Run
               - step:
