@@ -43,7 +43,7 @@ pipeline:
                     command: mvn package
               - step:
                   type: Semgrep
-                  name: Semgrep_1
+                  name: Security Scanning
                   identifier: Semgrep_1
                   spec:
                     mode: orchestration
