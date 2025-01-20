@@ -41,6 +41,19 @@ pipeline:
                   spec:
                     shell: Sh
                     command: mvn package
+              - step:
+                  type: Semgrep
+                  name: Semgrep_1
+                  identifier: Semgrep_1
+                  spec:
+                    mode: orchestration
+                    config: default
+                    target:
+                      type: repository
+                      detection: auto
+                    advanced:
+                      log:
+                        level: info
           platform:
             os: Linux
             arch: Amd64
