@@ -80,7 +80,7 @@ pipeline:
                   spec:
                     connectorRef: Jfrog
                     target: harnessshubham-libs-snapshot-local/
-                    sourcePath: "**/*.jar"
+                    sourcePath: target/*.jar
           platform:
             os: Linux
             arch: Amd64
