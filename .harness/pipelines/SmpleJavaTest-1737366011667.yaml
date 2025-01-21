@@ -73,6 +73,14 @@ pipeline:
                       ssl: false
                     tool:
                       project_key: shubhamchav_SmpleJavaTest
+              - step:
+                  type: ArtifactoryUpload
+                  name: ArtifactoryUpload_1
+                  identifier: ArtifactoryUpload_1
+                  spec:
+                    connectorRef: Jfrog
+                    target: harnessshubham-libs-snapshot-local/
+                    sourcePath: "**/*.jar"
           platform:
             os: Linux
             arch: Amd64
