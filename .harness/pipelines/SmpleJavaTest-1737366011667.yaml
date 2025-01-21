@@ -75,7 +75,7 @@ pipeline:
                       project_key: shubhamchav_SmpleJavaTest
               - step:
                   type: ArtifactoryUpload
-                  name: ArtifactoryUpload_1
+                  name: Upload Artifact to Jfrog
                   identifier: ArtifactoryUpload_1
                   spec:
                     connectorRef: Jfrog
