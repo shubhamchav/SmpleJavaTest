@@ -81,6 +81,16 @@ pipeline:
                     connectorRef: Jfrog
                     target: harnessshubham-libs-snapshot-local
                     sourcePath: target/*.jar
+              - step:
+                  type: BuildAndPushDockerRegistry
+                  name: BuildAndPushDockerRegistry_1
+                  identifier: BuildAndPushDockerRegistry_1
+                  spec:
+                    connectorRef: Docker_connector
+                    repo: shubhamchav/simplejavatest
+                    tags:
+                      - latest
+                    caching: true
           platform:
             os: Linux
             arch: Amd64
