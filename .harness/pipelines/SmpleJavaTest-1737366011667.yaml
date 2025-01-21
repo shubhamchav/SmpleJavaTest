@@ -81,6 +81,7 @@ pipeline:
                     connectorRef: Jfrog
                     target: harnessshubham-libs-snapshot-local/
                     sourcePath: target/*.jar
+                    flat: true
           platform:
             os: Linux
             arch: Amd64
