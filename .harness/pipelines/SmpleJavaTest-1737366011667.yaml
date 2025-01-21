@@ -79,7 +79,7 @@ pipeline:
                   identifier: ArtifactoryUpload_1
                   spec:
                     connectorRef: Jfrog
-                    target: harnessshubham-libs-snapshot-local/com/cybage/jacoco/simpleTest/1.0-SNAPSHOT
+                    target: harnessshubham-libs-snapshot-local
                     sourcePath: target/*.jar
           platform:
             os: Linux
