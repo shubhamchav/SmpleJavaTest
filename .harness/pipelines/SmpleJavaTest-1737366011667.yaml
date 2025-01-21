@@ -79,7 +79,7 @@ pipeline:
                   identifier: ArtifactoryUpload_1
                   spec:
                     connectorRef: Jfrog
-                    target: https://trial5jl2p6.jfrog.io/artifactory/harnessshubham-libs-snapshot-local/
+                    target: harnessshubham-libs-snapshot-local
                     sourcePath: target/*.jar
           platform:
             os: Linux
