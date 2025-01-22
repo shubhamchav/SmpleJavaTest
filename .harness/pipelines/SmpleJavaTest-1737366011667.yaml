@@ -99,16 +99,12 @@ pipeline:
                     mode: orchestration
                     config: default
                     target:
-                      type: container
+                      type: repository
                       detection: auto
                     advanced:
                       log:
                         level: info
                     privileged: true
-                    image:
-                      type: local_image
-                      tag: latest
-                      name: shubhamchav/simplejavatest
           platform:
             os: Linux
             arch: Amd64
