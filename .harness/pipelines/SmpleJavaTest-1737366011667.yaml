@@ -56,20 +56,6 @@ pipeline:
                         tool:
                           project_key: shubhamchav_SmpleJavaTest
                   - step:
-                      type: Semgrep
-                      name: Security Scanning
-                      identifier: Semgrep_1
-                      spec:
-                        mode: orchestration
-                        config: default
-                        target:
-                          type: repository
-                          detection: auto
-                        advanced:
-                          log:
-                            level: info
-                          fail_on_severity: critical
-                  - step:
                       type: Gitleaks
                       name: Gitleaks_1
                       identifier: Gitleaks_1
@@ -83,6 +69,21 @@ pipeline:
                           log:
                             level: info
                           fail_on_severity: high
+              - step:
+                  type: Semgrep
+                  name: Security Scanning
+                  identifier: Semgrep_1
+                  spec:
+                    mode: orchestration
+                    config: default
+                    target:
+                      type: repository
+                      detection: auto
+                    advanced:
+                      log:
+                        level: info
+                      fail_on_severity: critical
+                contextType: Pipeline
               - step:
                   type: Run
                   name: Package
