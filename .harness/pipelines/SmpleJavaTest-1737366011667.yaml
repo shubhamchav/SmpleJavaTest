@@ -91,6 +91,24 @@ pipeline:
                     tags:
                       - latest
                     caching: true
+              - step:
+                  type: Grype
+                  name: Grype_1
+                  identifier: Grype_1
+                  spec:
+                    mode: orchestration
+                    config: default
+                    target:
+                      type: container
+                      detection: auto
+                    advanced:
+                      log:
+                        level: info
+                    privileged: true
+                    image:
+                      type: local_image
+                      tag: latest
+                      name: shubhamchav/simplejavatest
           platform:
             os: Linux
             arch: Amd64
