@@ -16,6 +16,7 @@ pipeline:
         spec:
           caching:
             enabled: true
+            paths: []
           cloneCodebase: true
           execution:
             steps:
@@ -103,10 +104,47 @@ pipeline:
                       log:
                         level: info
                     privileged: true
+              - parallel:
+                  - step:
+                      type: Background
+                      name: DinD
+                      identifier: DinD
+                      spec:
+                        connectorRef: Docker_connector
+                        image: shubhamchav/simplejavatest:latest
+                        shell: Sh
+                        entrypoint:
+                          - dockerd
+                  - step:
+                      type: AquaTrivy
+                      name: AquaTrivy_1
+                      identifier: AquaTrivy_1
+                      spec:
+                        mode: orchestration
+                        config: default
+                        target:
+                          type: container
+                          detection: auto
+                        advanced:
+                          log:
+                            level: info
+                        privileged: true
+                        image:
+                          type: docker_v2
+                          tag: latest
+                          access_id: shubhamchav
+                          access_token: <+secrets.getValue("project.Docker")>
+                          name: shubhamchav/simplejavatest
+                          domain: docker.io
           platform:
             os: Linux
             arch: Amd64
           runtime:
             type: Cloud
             spec: {}
+          sharedPaths:
+            - /var/run
+          buildIntelligence:
+            enabled: true
         type: CI
+        description: ""
