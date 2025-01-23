@@ -35,35 +35,55 @@ pipeline:
                     shell: Sh
                     command: mvn test
                     intelligenceMode: true
-              - step:
-                  type: Gitleaks
-                  name: Gitleaks_1
-                  identifier: Gitleaks_1
-                  spec:
-                    mode: orchestration
-                    config: default
-                    target:
-                      type: repository
-                      detection: auto
-                    advanced:
-                      log:
-                        level: info
-                      fail_on_severity: high
-              - step:
-                  type: Semgrep
-                  name: Security Scanning
-                  identifier: Semgrep_1
-                  spec:
-                    mode: orchestration
-                    config: default
-                    target:
-                      type: repository
-                      detection: auto
-                    advanced:
-                      log:
-                        level: info
-                      fail_on_severity: critical
-                contextType: Pipeline
+              - parallel:
+                  - step:
+                      type: Sonarqube
+                      name: Sonarqube
+                      identifier: Sonarqube
+                      spec:
+                        mode: orchestration
+                        config: default
+                        target:
+                          type: repository
+                          detection: auto
+                        advanced:
+                          log:
+                            level: info
+                          fail_on_severity: high
+                        auth:
+                          access_token: 5ca7a9d7c023ff2d022e32d71f7b6cb1e97c8f1a
+                          domain: https://sonarcloud.io/
+                          ssl: false
+                        tool:
+                          project_key: shubhamchav_SmpleJavaTest
+                  - step:
+                      type: Semgrep
+                      name: Security Scanning
+                      identifier: Semgrep_1
+                      spec:
+                        mode: orchestration
+                        config: default
+                        target:
+                          type: repository
+                          detection: auto
+                        advanced:
+                          log:
+                            level: info
+                          fail_on_severity: critical
+                  - step:
+                      type: Gitleaks
+                      name: Gitleaks_1
+                      identifier: Gitleaks_1
+                      spec:
+                        mode: orchestration
+                        config: default
+                        target:
+                          type: repository
+                          detection: auto
+                        advanced:
+                          log:
+                            level: info
+                          fail_on_severity: high
               - step:
                   type: Run
                   name: Package
