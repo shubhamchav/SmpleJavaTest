@@ -81,5 +81,11 @@
             </plugin>
         </plugins>
     </build>
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <url>https://maven.pkg.github.com/shubhamchav/SmpleJavaTest</url>
+        </repository>
+    </distributionManagement>
 </project>
  
