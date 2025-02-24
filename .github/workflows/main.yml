@@ -3,7 +3,7 @@ name: Deploy to GitHub Packages
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   deploy:
@@ -27,7 +27,7 @@ jobs:
           echo '<settings>
                   <servers>
                     <server>
-                      <id>github</id>
+                      <id>ghpackage</id>
                       <username>shubhamchav</username>
                       <password>${{ secrets.GH_TOKEN }}</password>
                     </server>
