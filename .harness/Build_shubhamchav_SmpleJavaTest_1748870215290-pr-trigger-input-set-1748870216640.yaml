@@ -1,0 +1,14 @@
+inputSet:
+  name: Build_shubhamchav_SmpleJavaTest_1748870215290-pr-trigger-input-set
+  identifier: Build_shubhamchav_SmpleJavaTest_1748870215290prtriggerinputset
+  orgIdentifier: default
+  projectIdentifier: Teamdemo
+  pipeline:
+    identifier: Build_shubhamchav_SmpleJavaTest_1748870215290
+    properties:
+      ci:
+        codebase:
+          build:
+            type: PR
+            spec:
+              number: <+trigger.prNumber>
